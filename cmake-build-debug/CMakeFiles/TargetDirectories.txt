@@ -1,6 +1,0 @@
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/CMakeFiles/robot_path_finding.dir
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/libs/sfml_drawer/CMakeFiles/rebuild_cache.dir
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/libs/sfml_drawer/CMakeFiles/edit_cache.dir
-/home/vadim/programs/cpp/robot-path-finding/cmake-build-debug/libs/sfml_drawer/CMakeFiles/sfml-drawer.dir
