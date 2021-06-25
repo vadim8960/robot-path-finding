@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../libs/sfml_drawer/SFMLDrawer.h
+SFML/Graphics.hpp
+../libs/sfml_drawer/SFML/Graphics.hpp
+sfline.h
+../libs/sfml_drawer/sfline.h
+
+../libs/sfml_drawer/sfline.h
+SFML/Graphics.hpp
+../libs/sfml_drawer/SFML/Graphics.hpp
+
+/home/vadim/programs/cpp/robot-path-finding/main.cpp
+SFMLDrawer.h
+-
+

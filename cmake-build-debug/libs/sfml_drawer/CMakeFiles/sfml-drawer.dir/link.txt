@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfml-drawer.a  CMakeFiles/sfml-drawer.dir/SFMLDrawer.cpp.o CMakeFiles/sfml-drawer.dir/sfline.cpp.o
+/usr/bin/ranlib libsfml-drawer.a
