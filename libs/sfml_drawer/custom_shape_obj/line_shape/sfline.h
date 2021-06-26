@@ -23,9 +23,9 @@ namespace sf {
 
         float getLength();
 
-        const sf::Vector2f getStartPoints();
+        sf::Vector2f getStartPoints();
 
-        const sf::Vector2f getEndPoints();
+        sf::Vector2f getEndPoints();
 
         size_t getPointCount() const override;
 

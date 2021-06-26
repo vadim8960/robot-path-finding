@@ -33,7 +33,7 @@ public:
 
     sf::CircleShape draw_circle(int r, int x, int y, sf::Color color);
 
-    sf::RectangleShape draw_line(int w, int x1, int y1, int x2, int y2, sf::Color color);
+    sf::LineShape draw_line(int w, int x1, int y1, int x2, int y2, sf::Color color);
 
     bool window_is_open();
 
@@ -44,8 +44,6 @@ public:
     void window_clear();
 
     void window_close();
-
-
 };
 
 
