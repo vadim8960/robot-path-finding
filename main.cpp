@@ -1,38 +1,28 @@
-#include <SFMLDrawer.h>
+#include "SFMLDrawer.h"
 
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
-
-    sf::Image image;
-    image.create(1000, 1000);
-    sf::Sprite sprite;
-    sf::Texture texture;
-
-    sf::LineShape line(10, 2);
-    line.setPosition(20, 20);
-    line.setFillColor(sf::Color::Red);
-    line.setRotation(15);
-    sf::CircleShape shape(100.f);
-    sf::RectangleShape shape2({15, 15});
-    shape2.setPosition(20, 20);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
-    {
-        sf::Event event{};
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-//        window.draw(shape);
-        window.draw(line);
-//        window.draw(shape2);
-        window.display();
+void event_handler(sf::Event &event) {
+    SFMLDrawer &sfml = SFMLDrawer::create();
+    if (event.type == sf::Event::Closed) {
+        sfml.window_close();
     }
+}
 
+int main() {
+    SFMLDrawer &sfml_drawer = SFMLDrawer::create();
+    sfml_drawer.init(200, 200, "Hello");
+    auto rect = sfml_drawer.draw_rectangle(10, 10, 10, 10, sf::Color::White);
+    auto circle = sfml_drawer.draw_circle(10, 20, 20, sf::Color::Yellow);
+    auto line1 = sfml_drawer.draw_line(1, 50, 50, 100, 100, sf::Color::Magenta);
+    auto line2 = sfml_drawer.draw_line(15, 100, 100, 200, 159, sf::Color::Green);
+    sfml_drawer.window_update();
+    while (sfml_drawer.window_is_open()) {
+        sfml_drawer.window_poll_events(event_handler);
+        sfml_drawer.window_clear();
+        sfml_drawer.draw_circle(circle);
+        sfml_drawer.draw_line(line2);
+        sfml_drawer.draw_line(line1);
+        sfml_drawer.draw_rectangle(rect);
+        sfml_drawer.window_update();
+    }
     return 0;
 }

@@ -6,12 +6,10 @@ set(SFML_LIBS sfml-graphics sfml-window sfml-system)
 
 set(CUSTOM_SHAPE_HEADERS inc/CustomCircleShape.h inc/CustomLineShape.h inc/CustomRectShape.h)
 set(CUSTOM_SHAPE_SOURCES src/CustomCircleShape.cpp src/CustomLineShape.cpp src/CustomRectShape.cpp)
-set(SF_LINE_SHAPE_LIB line_shape/sfline.h line_shape/sfline.cpp)
 
 add_library(${PROJECT_NAME}
         ${CUSTOM_SHAPE_HEADERS}
-        ${CUSTOM_SHAPE_SOURCES}
-        ${SF_LINE_SHAPE_LIB})
+        ${CUSTOM_SHAPE_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 target_include_directories(${PROJECT_NAME} PUBLIC inc)
