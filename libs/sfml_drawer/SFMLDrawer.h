@@ -5,35 +5,42 @@
 #ifndef ROBOT_PATH_FINDING_SFMLDRAWER_H
 #define ROBOT_PATH_FINDING_SFMLDRAWER_H
 
-#include "SFML/Graphics.hpp"
-#include "sfline.h"
+#include "custom_shape_obj/CustomShapes.h"
 
 class SFMLDrawer {
 
 private:
-    sf::Image _image;
-    sf::Texture _texture;
     sf::RenderWindow _window;
 
-protected:
     SFMLDrawer() = default;
 
+    SFMLDrawer(const SFMLDrawer &s);
+
+    SFMLDrawer &operator=(const SFMLDrawer &);
+
 public:
-    SFMLDrawer(const SFMLDrawer &s) = delete;
+    static SFMLDrawer &create();
 
-    SFMLDrawer &operator=(const SFMLDrawer &) = delete;
+    void init(unsigned int width, unsigned int height, const sf::String &title);
 
-    static SFMLDrawer &create(int width, int height, sf::String title);
+    void set_size(unsigned int width, unsigned int height);
 
-    void set_size(int width, int height);
+    void set_title(const sf::String &title);
 
-    void set_title(sf::String title);
+    CustomRectShape
+    draw_rectangle(unsigned int width, unsigned int height, unsigned int x, unsigned int y, const sf::Color &color);
 
-    sf::RectangleShape draw_rectangle(int width, int height, int x, int y, sf::Color color);
+    void draw_rectangle(const CustomRectShape &rect);
 
-    sf::CircleShape draw_circle(int r, int x, int y, sf::Color color);
+    CustomCircleShape draw_circle(unsigned int r, unsigned int x, unsigned int y, const sf::Color &color);
 
-    sf::RectangleShape draw_line(int w, int x1, int y1, int x2, int y2, sf::Color color);
+    void draw_circle(const CustomCircleShape &circle);
+
+    CustomLineShape
+    draw_line(unsigned int w, unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2,
+              const sf::Color &color);
+
+    void draw_line(const CustomLineShape &line);
 
     bool window_is_open();
 
@@ -44,8 +51,6 @@ public:
     void window_clear();
 
     void window_close();
-
-
 };
 
 
